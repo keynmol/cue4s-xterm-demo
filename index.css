@@ -1,10 +1,7 @@
-#content {
-  margin:auto;
-  width: 20%;
-  padding: 30px;
-  border: 1px solid black;
+.my-terminal {
+  padding:8px; width: 400px; border: 1px dashed white;
 }
-button {
-  font-size: 20px;
-  font-weight: bold;
+html,body {
+  background:black;
+  color: white;
 }

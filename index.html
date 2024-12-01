@@ -1,16 +1,51 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/index.css" rel="stylesheet">
-    <title>Hello, Scala.js!</title>
-  </head>
-  <body>
-    <center>
-      <h1>Hello Scala.js</h1>
-    </center>
-    <div id="content"></div>
-    <script type="module" src="/scalajs-frontend.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="/index.css" rel="stylesheet">
+  <link rel="stylesheet" href="node_modules/@xterm/xterm/css/xterm.css" />
+  <title>Hello, Scala.js!</title>
+</head>
+
+<body>
+  <center>
+    <h1 style="color: white">Cue4s ❤️ Xterm.js ❤️ Scala.js</h1>
+    <pre id="result" style="padding:8px"></pre>
+  </center>
+  <div style="width: 800px; margin:auto; display: grid; grid-template-columns: 1fr 1fr; column-gap: 20px; row-gap: 20px;">
+    <div>
+      <h3>Single choice input</h3>
+      <pre id="single-choice-input-result"></pre>
+      <div id="single-choice-input-terminal" class="my-terminal"></div>
+    </div>
+    <div>
+      <h3>Plain text input</h3>
+      <pre id="text-input-result"></pre>
+      <div id="text-input-terminal" class="my-terminal"></div>
+    </div>
+
+    <div>
+      <h3>Password input</h3>
+      <pre id="password-input-result"></pre>
+      <div id="password-input-terminal" class="my-terminal"></div>
+    </div>
+
+    <div>
+      <h3>Number input</h3>
+      <pre id="number-input-result"></pre>
+      <div id="number-input-terminal" class="my-terminal"></div>
+    </div>
+
+    <div>
+      <h3>Multi choice input</h3>
+      <pre id="multi-choice-input-result"></pre>
+      <div id="multi-choice-input-terminal" class="my-terminal"></div>
+    </div>
+  </div>
+
+  <script type="module" src="/scalajs-frontend.js"></script>
+</body>
+
 </html>
