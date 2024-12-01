@@ -7,7 +7,7 @@
     "dev": "concurrently npm:watchScalajs vite",
     "build": "npm run buildScalajsRelease && vite build",
     "preview": "vite preview",
-    "buildForGithubPages": "npm run buildScalajsRelease && vite build --base=/cue4s-demo",
+    "buildForGithubPages": "npm run buildScalajsRelease && vite build --base=/cue4s-xterm-demo",
     "watchScalajs": "scala-cli --power package . -w -f -o scalajs-frontend.js --js-module-kind es",
     "buildScalajs": "scala-cli --power package . -f -o scalajs-frontend.js --js-module-kind es",
     "buildScalajsRelease": "scala-cli --power package . -f -o scalajs-frontend.js --js-mode release --js-module-kind es"
