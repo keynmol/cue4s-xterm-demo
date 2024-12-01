@@ -1,7 +1,15 @@
 .my-terminal {
-  padding:8px; width: 400px; border: 1px dashed white;
+  padding:8px; width: 400px; border: 6px dashed grey;
+  cursor: hand;
+}
+.my-terminal-focus {
+  padding:8px; width: 400px; border: 6px solid yellow;
 }
 html,body {
   background:black;
   color: white;
+}
+a {
+  color: cyan;
+  font-size: 1.5rem;
 }

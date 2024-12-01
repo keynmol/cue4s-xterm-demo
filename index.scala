@@ -1,7 +1,8 @@
 //> using platform scala-js
 //> using jsVersion 1.17.0
+//> using repository sonatype-s01:snapshots
 //> using dep org.scala-js::scalajs-dom::2.8.0
-//> using dep tech.neander::cue4s::0.0.3
+//> using dep tech.neander::cue4s::0.0.3+3-5758bf9c-SNAPSHOT
 //> using scala 3.5.2
 //> using option -Wunused:all
 
@@ -77,12 +78,24 @@ def demo[Result](
     resultContainer: Element
 ) =
   val xterm = createXterm(terminalContainer)
+
+  terminalContainer.asInstanceOf[HTMLHtmlElement].onclick = ev =>
+    document
+      .getElementsByClassName("my-terminal-focus")
+      .toList
+      .foreach: el =>
+        console.log(el)
+        el.removeAttribute("class")
+        el.setAttribute("class", "my-terminal")
+
+    terminalContainer.setAttribute("class", "my-terminal-focus")
+
   demonstratePrompt(prompt, xterm).onComplete: res =>
     resultContainer.innerHTML = "<b>Result:</b> " + res.toString()
 end demo
 
 @main def hello =
-  val jq = document.getElementById(_)
+  val jq = document.getElementById(_: String).asInstanceOf[HTMLHtmlElement]
 
   demo(
     new cue4s.Prompt.Input(
@@ -123,6 +136,24 @@ end demo
     jq("single-choice-input-terminal"),
     jq("single-choice-input-result")
   )
+
+  demo(
+    cue4s.Prompt.MultipleChoice
+      .withAllSelected(
+        "Which ones are colors?",
+        List("five", "blue", "red", "bus")
+      )
+      .mapValidated: lst =>
+        val expected = Set("blue", "red")
+        if lst.toSet == expected then Right(lst)
+        else
+          Left(PromptError(s"These are not colors: ${lst.toSet -- expected}"))
+    ,
+    jq("multi-choice-input-terminal"),
+    jq("multi-choice-input-result")
+  )
+
+  jq("single-choice-input-terminal").click()
 
 end hello
 
