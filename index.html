@@ -1,59 +1,88 @@
 <!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>cue4s demo using xterm.js</title>
+      <script type="module" crossorigin src="/cue4s-xterm-demo/assets/index-BPfmt_lU.js"></script>
+      <link rel="stylesheet" crossorigin href="/cue4s-xterm-demo/assets/index-JdKWVqC3.css">
+    </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>cue4s demo using xterm.js</title>
-  <script type="module" crossorigin src="/cue4s-xterm-demo/assets/index-CrW-zOCU.js"></script>
-  <link rel="stylesheet" crossorigin href="/cue4s-xterm-demo/assets/index-JdKWVqC3.css">
-</head>
+    <body>
+        <center style="max-width: 800px; margin: auto">
+            <h1 style="color: white">Cue4s ❤️ Xterm.js ❤️ Scala.js</h1>
+            <p style="font-size: 1.5rem">
+                Demonstration of cue4s - cross-platform Scala 3 library for CLI
+                prompts that works on JS, Native, and the JVM. This
+                demonstration is performed by running the Scala.js version of
+                the library in terminals emulated by Xterm.js. Click on any of
+                the terminals and start typing!
+            </p>
+            <a href="https://github.com/neandertech/cue4s">Cue4s</a> |
+            <a href="https://xtermjs.org/">xterm.js</a> |
+            <a href="https://scala-js.org/">Scala.js</a> |
+            <a href="https://github.com/keynmol/cue4s-xterm-demo"
+                >Edit this page</a
+            >
+        </center>
+        <div
+            style="
+                margin: auto;
+                max-width: 80%;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 40px;
+            "
+        >
+            <div>
+                <h3>Single choice input</h3>
+                <pre
+                    id="single-choice-input-result"
+                    style="display: block"
+                ></pre>
+                <div
+                    id="single-choice-input-terminal"
+                    class="my-terminal"
+                ></div>
+            </div>
 
-<body>
-  <center style = "max-width: 800px; margin:auto">
-    <h1 style="color: white">Cue4s ❤️ Xterm.js ❤️ Scala.js</h1>
-    <p style = "font-size: 1.5rem">Demonstration of cue4s - cross-platform Scala 3 library for CLI prompts that works 
-    on JS, Native, and the JVM. This demonstration is performed by running the Scala.js version
-    of the library in terminals emulated by Xterm.js. Click on any of the terminals and start typing!</p>
-    <a href = "https://github.com/neandertech/cue4s">Cue4s</a> | 
-    <a href = "https://xtermjs.org/">xterm.js</a> | 
-    <a href = "https://scala-js.org/">Scala.js</a> | 
-    <a href = "https://github.com/keynmol/cue4s-xterm-demo">Edit this page</a>
-  </center>
-  <div style="margin:auto; max-width: 80%; display: flex; flex-wrap: wrap; gap: 40px">
-    <div>
-      <h3>Single choice input</h3>
-      <pre id="single-choice-input-result" style ="display: block"> </pre>
-      <div id="single-choice-input-terminal" class="my-terminal"></div>
-    </div>
+            <div>
+                <h3>Multi choice input</h3>
+                <pre
+                    id="multi-choice-input-result"
+                    style="display: block"
+                ></pre>
 
-    <div>
-      <h3>Multi choice input</h3>
-      <pre id="multi-choice-input-result" style ="display: block"> </pre>
+                <div id="multi-choice-input-terminal" class="my-terminal"></div>
+            </div>
 
-      <div id="multi-choice-input-terminal" class="my-terminal"></div>
-    </div>
+            <div>
+                <h3>Plain text input</h3>
+                <pre id="text-input-result" style="display: block"></pre>
+                <div id="text-input-terminal" class="my-terminal"></div>
+            </div>
 
-    <div>
-      <h3>Plain text input</h3>
-      <pre id="text-input-result" style ="display: block"> </pre>
-      <div id="text-input-terminal" class="my-terminal"></div>
-    </div>
+            <div>
+                <h3>Password input</h3>
+                <pre id="password-input-result" style="display: block"></pre>
+                <div id="password-input-terminal" class="my-terminal"></div>
+            </div>
 
-    <div>
-      <h3>Password input</h3>
-      <pre id="password-input-result" style ="display: block"> </pre>
-      <div id="password-input-terminal" class="my-terminal"></div>
-    </div>
+            <div>
+                <h3>Confirmation</h3>
+                <pre
+                    id="confirmation-input-result"
+                    style="display: block"
+                ></pre>
+                <div id="confirmation-input-terminal" class="my-terminal"></div>
+            </div>
 
-    <div>
-      <h3>Number input</h3>
-      <pre id="number-input-result" style ="display: block"> </pre>
-      <div id="number-input-terminal" class="my-terminal"></div>
-    </div>
+            <div>
+                <h3>Number input</h3>
+                <pre id="number-input-result" style="display: block"></pre>
+                <div id="number-input-terminal" class="my-terminal"></div>
+            </div>
+        </div>
 
-  </div>
-
-</body>
-
+    </body>
 </html>
