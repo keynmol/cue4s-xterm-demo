@@ -1,8 +1,7 @@
 //> using platform scala-js
 //> using jsVersion 1.17.0
-//> using repository sonatype-s01:snapshots
 //> using dep org.scala-js::scalajs-dom::2.8.0
-//> using dep tech.neander::cue4s::0.0.3+3-5758bf9c-SNAPSHOT
+//> using dep tech.neander::cue4s::0.0.6
 //> using scala 3.5.2
 //> using option -Wunused:all
 
@@ -126,6 +125,14 @@ end demo
     ).positive.min(10),
     jq("number-input-terminal"),
     jq("number-input-result")
+  )
+
+  demo(
+    new cue4s.Prompt.Confirmation(
+      "Are you enjoying life?"
+    ),
+    jq("confirmation-input-terminal"),
+    jq("confirmation-input-result")
   )
 
   demo(
